@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Tienda</b>CHECHO',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Agenda</b> Escolar',
+    //'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+           // 'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+           // 'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -259,7 +259,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => 'user/profile',
 
     /*
     |--------------------------------------------------------------------------
@@ -291,7 +291,7 @@ return [
 
     'menu' => [
         // Navbar items:
-       /* [
+      /* [
             'type'         => 'navbar-search',
             'text'         => 'bucar',
             'topnav_right' => true,
@@ -299,14 +299,14 @@ return [
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
-        ],
+        ],*/
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
+        /*[
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
@@ -314,29 +314,133 @@ return [
        //----------
         [
             'text' => 'Inico',
-            'url'  => 'dashboard',
+            'url'  => 'inicio',
             'icon' => 'fas fa-fw fa-home',
          ],
         
         //----------
-     /*   [
+       /*[
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'perfil',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        /*[
-            'text' => 'Cambiar Contraseña',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
         ],*/
+        //['header' => 'account_settings'],
+        [
+            'text'    => 'Gestion Usuarios',
+           // 'icon'    => 'fas fa-fw fa-book',
+           // 'can' => 'gestion academica',
+            'submenu' => [
+                [
+                    'text' => 'Usuario',
+                    'url'  => 'mostrar_usuario',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'Profesor',
+                    'url'  => 'mostrar_profesor',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'Alumno',
+                    'url'  => 'mostrar_alumno',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+
+                [
+                    'text' => 'Padre de Familia',
+                    'url'  => 'mostrar_padre',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Gestion Academica',
+           // 'icon'    => 'fas fa-fw fa-book',
+           // 'can' => 'gestion academica',
+            'submenu' => [
+                [
+                    'text' => 'Curso',
+                    'url'  => 'mostrar_curso',
+                    'icon'    => 'fas fa-fw fa-chalkboard',
+                  //  'can' => 'Listar estudiantes',
+                ],
+                [
+                    'text' => 'Materia',
+                    'url'  => 'mostrar_materia',
+                    'icon'    => 'fas fa-fw fa-book',
+                   // 'can' => 'Listar docentes',
+                ],
+                [
+                    'text' => 'Calendario',
+                    'url'  => 'crear_calendario',
+                    'icon'    => 'fas fa-fw fa-clock',
+                   // 'can' => 'Listar docentes',
+                ],                               
+                // [
+                //     'text' => 'Periodo',
+                //     'url'  => '#',
+                //     'icon'    => 'fas fa-fw fa-calendar-alt',            
+                // ],
+                
+                [
+                    'text' => 'Horario',
+                    'url'  => 'mostrar_horario',
+                    'icon'    => 'fas fa-fw fa-clock',
+                  //  'can' => 'Listar materias',
+                ],
+               
+            ],
+
+        ],
+        
+            [
+                'text'    => 'Gestion Procesos',
+               // 'icon'    => 'fas fa-fw fa-book',
+               // 'can' => 'gestion academica',
+                'submenu' => [                
+                    [
+                        'text' => 'Padres de los alumnos',
+                        'url'  => 'padre_alumno',
+                        'icon' => 'fas fa-fw fa-user',
+                    ],
+                    [
+                        'text' => 'Materias para el profesor',
+                        'url'  => 'materia_profesor',
+                        'icon' => 'fas fa-fw fa-book',
+                    ],
+                    [
+                        'text' => 'Curso del profesor',
+                        'url'  => 'curso_profesor',
+                        'icon' => 'fas fa-fw fa-chalkboard',
+                    ],
+                    [
+                        'text' => 'Curso del alumno',
+                        'url'  => 'curso_alumno',
+                        'icon' => 'fas fa-fw fa-chalkboard',
+                    ],
+                   
+                ],
+        ],
+        [
+            'text'    => 'Gestion Comunicado',
+           // 'icon'    => 'fas fa-fw fa-book',
+           // 'can' => 'gestion academica',
+            'submenu' => [
+                [
+                    'text' => 'Aviso',
+                    'url'  => 'register',
+                    'icon' => 'fas fa-fw fa-book',
+                ],
+               
+            ],
+        ],
+        // [
+        //     'text' => 'Cambiar Contraseña',
+        //     'url'  => '',
+        //     'icon' => 'fas fa-fw fa-lock',
+        // ],
         /*[
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
