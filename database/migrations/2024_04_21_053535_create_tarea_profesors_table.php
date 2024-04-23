@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('tarea_profesors', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('alumnoID')->nullable();
-            $table->foreign('alumnoID')->references('id')->on('curso_alumnos');
+            $table->foreign('alumnoID')->references('id')->on('curso_alumnos')
+            ->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('materia');
             $table->string('Tema');
             $table->string('Imagen');

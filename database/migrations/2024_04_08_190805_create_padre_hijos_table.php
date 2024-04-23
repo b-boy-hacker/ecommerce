@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('padre_id')->nullable();
             $table->unsignedBigInteger('hijo_id')->nullable();
-            $table->foreign('padre_id')->references('id')->on('padres');
-            $table->foreign('hijo_id')->references('id')->on('alumnos');
+            $table->foreign('padre_id')->references('id')->on('padres')
+             ->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('hijo_id')->references('id')->on('alumnos')
+            ->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }

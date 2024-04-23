@@ -70,13 +70,24 @@
                         <input class="text_color" type="text" name="id" 
                             placeholder="" required="">
                     </div>
-                   
+                    <div class="div_design">
+                        <label class="text-align:center;">CI</label>
+                        <select class="text_color" name="ci" required="">
+                            <option value="" selected>Seleccionar usuario...</option>
+                            @foreach ($alumno as $estudiante)
+                                <option value="{{ $estudiante->CI}}">
+                                        {{ $estudiante->Nombre}}
+                                    ... {{ $estudiante->ApellidoPaterno }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="div_design">
                         <label class="text-align:center;">Nombre</label>
                         <select class="text_color" name="name" required="">
                             <option value="" selected>Seleccionar usuario...</option>
                             @foreach ($alumno as $estudiante)
-                                <option value="{{ $estudiante->Nombre}} {{ $estudiante->ApellidoPaterno }}">
+                                <option value="{{ $estudiante->Nombre}}">
                                         {{ $estudiante->Nombre}}
                                     ... {{ $estudiante->ApellidoPaterno }}
                                 </option>

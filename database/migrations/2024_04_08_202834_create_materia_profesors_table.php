@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('profesor_id')->nullable();
             $table->unsignedBigInteger('materia_id')->nullable();
-            $table->foreign('profesor_id')->references('id')->on('profesors');
-            $table->foreign('materia_id')->references('id')->on('materias');
+            $table->foreign('profesor_id')->references('id')->on('profesors')
+            ->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('materia_id')->references('id')->on('materias')
+            ->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->timestamps();
         });

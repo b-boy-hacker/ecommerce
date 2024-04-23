@@ -74,6 +74,7 @@ public function crear_nuevo_usuario(Request $request){
 
     $usuario=new User;
     $usuario->id= $request->id;
+    $usuario->ci= $request->ci;
     $usuario->name= $request->name;
     $usuario->rol= $request->rol;
     $usuario->usertype= $request->usertype;

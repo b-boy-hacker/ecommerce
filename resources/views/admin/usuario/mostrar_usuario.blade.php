@@ -77,6 +77,7 @@
         <thead>
             <tr>
                 <th class="th_deg" scope="col">ID</th>
+                <th class="th_deg" scope="col">CI</th>
                 <th class="th_deg" scope="col">Nombre Completo</th>
                 <th class="th_deg" scope="col">Correo</th>
                 <th class="th_deg" scope="col">tipo</th>
@@ -88,6 +89,7 @@
             @foreach ($usuario as $user)
             <tr>
                 <td>{{$user->id}}</td>
+                <td>{{$user->ci}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->usertype}}</td>

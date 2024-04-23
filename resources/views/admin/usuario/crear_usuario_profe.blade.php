@@ -69,7 +69,18 @@
                         <input class="text_color" type="text" name="id" 
                             placeholder="" required="">
                     </div>
-                   
+                    <div class="div_design">
+                        <label class="text-align:center;">CI</label>
+                        <select class="text_color" name="ci" required="">
+                            <option value="" selected>Seleccionar usuario...</option>
+                            @foreach ($profe as $prof)
+                                <option value="{{ $prof->CI}}">
+                                        {{ $prof->Nombre}}
+                                    ... {{ $prof->ApellidoPaterno }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="div_design">
                         <label class="text-align:center;">Nombre</label>
                         <select class="text_color" name="name" required="">
