@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Alumno;
 use App\Models\c;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -32,12 +34,24 @@ class AuthController extends Controller
                 $data = ["success" => false, "mensaje" => "Contrasña incorrecta"];
                 if (Hash::check($request->password, $user->password)) {
                     $accessToken = $user->createToken("auth_token")->plainTextToken;
+                    if($user->usertype == "3"){
+                        $a = DB::table('alumnos')->where('CI',$user->ci)->first();
+                        $data = [
+                            "success" => true,
+                            "mensaje" => "Usuario Autenticado",
+                            "user"=> $user,
+                            "alumnoid"=>  $a->id,
+                            "access_token" => $accessToken
+                        ];
+                    }
                     $data = [
                         "success" => true,
                         "mensaje" => "Usuario Autenticado",
                         "user"=> $user,
+                        "alumnoid"=>  1,
                         "access_token" => $accessToken
                     ];
+                    
 
                 }
             }

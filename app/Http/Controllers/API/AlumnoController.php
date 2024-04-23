@@ -13,13 +13,13 @@ class AlumnoController extends Controller
     public function getTareasToAlumno(Request $request)
     {
         $tareas = TareaProfesor::all();
-        return response([$tareas], 200);
+        return response($tareas, 200);
     }
 
     public function getAlumnosToPadre(Request $request)
     {
 
-        $padre = Padre::find($request->id);
+        $padre = Padre::find(1);
         $alumnos = DB::table('alumnos')
             ->join('padre_hijos', 'alumnos.id', '=', 'padre_hijos.hijo_id')
             ->join('padres', 'padres.id', '=', 'padre_hijos.padre_id')
@@ -31,6 +31,6 @@ class AlumnoController extends Controller
             )
             ->where('padres.CI', $padre->CI)
             ->get();
-        return response([$alumnos], 200);
+        return response($alumnos, 200);
     }
 }
