@@ -41,7 +41,7 @@ class AuthController extends Controller
 
                 }
             }
-            return response()->json($data, 404);
+            return response()->json($data, 200);
         } catch (\Throwable $th) {
             return response(['message' => $th->getMessage()], 404);
         }
