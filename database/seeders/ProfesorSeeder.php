@@ -20,7 +20,7 @@ class ProfesorSeeder extends Seeder
             'ApellidoMaterno' => 'Perez',
             'Sexo' => 'Femenino',
             'Telefono' => '75522090', 
-            'Correo' => 'gino@gmail.com',  
+            'Correo' => 'nellsy@gmail.com',  
             'Direccion' => 'Avenida Bush', 
             'FechaNacimiento' => '2024-04-09',           
             'FechaRegistro' => '2024-04-10',                

@@ -25,7 +25,7 @@ class UsuarioSeeder extends Seeder
         User::create([
             'ci' => '200',
             'name' => 'Nellsy',            
-            'email' => 'profe@gmail.com',
+            'email' => 'nellsy@gmail.com',
             'password' => bcrypt('12345678'),
             'usertype' => '2', 
             'rol' => 'Profesor'
@@ -34,7 +34,7 @@ class UsuarioSeeder extends Seeder
         User::create([
             'ci' => '300',
             'name' => 'Pamela',
-            'email' => 'alumno@gmail.com',
+            'email' => 'pamela@gmail.com',
             'password' => bcrypt('12345678'),
             'usertype' => '3', 
             'rol' => 'Alumno'          
@@ -43,7 +43,7 @@ class UsuarioSeeder extends Seeder
         User::create([
             'ci' => '400',
             'name' => 'Angel',          
-            'email' => 'padre@gmail.com',
+            'email' => 'angel@gmail.com',
             'password' => bcrypt('12345678'),
             'usertype' => '4', 
             'rol' => 'Padre'          

@@ -22,8 +22,17 @@ class DatabaseSeeder extends Seeder
         $this -> call(UsuarioSeeder::class);
         $this -> call(RolSeeder::class);
         $this -> call(ProfesorSeeder::class);
+        $this -> call(CursoSeeder::class);
         $this -> call(AlumnoSeeder::class);
+        $this -> call(CursoAlumnoSeeder::class);
         $this -> call(PadreSeeder::class);
+        $this -> call(PadreHijoSeeder::class);
+        $this -> call(MateriaSeeder::class);
+        $this -> call(MateriaProfesorSeeder::class);
+        $this -> call(CursoProfesorSeeder::class);
+
+
+        
 
     }
 }
