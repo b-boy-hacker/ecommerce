@@ -2409,7 +2409,7 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #00394f;
+  background-color:rgb(124 114 239);
   border-color: #00394f;
 }
 
@@ -6356,7 +6356,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #17a2b8 !important;
+  background-color: #00194f  !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -7705,7 +7705,7 @@ button.bg-dark:focus {
 
 .mt-5,
 .my-5 {
-  margin-top: 3rem !important;
+  margin-top: 2rem !important;
 }
 
 .mr-5,
@@ -9526,7 +9526,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #17a2b8 !important;
+  color: #4b0f59 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {

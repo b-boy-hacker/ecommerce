@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    
+
   {{-- LA CABECERA --}}
   @include('inicio.cabecerera')
 
